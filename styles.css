@@ -1,0 +1,285 @@
+/* ...Login Layout... */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f6fa;
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow:  15px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: #283a58;
+    font-weight: 600;
+}
+
+#login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#login-form input {
+    padding: 12px;
+    border: solid #0a0a0a;
+    border-radius: 9px;
+    font-size: 1rem;
+}
+
+#login-form button {
+    padding: 12px;
+    background: #CA000A;
+    color: #fffcfc;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#login-form button:hover {
+    background: #111111;
+}
+
+.login-btn {
+    background: #CA000A;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 24px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    letter-spacing: 1px;
+}
+
+.login-btn:hover {
+    background: #111;
+}
+
+/* ...Main Layout... */
+body {
+    margin: 0;
+    font-family: 'Times New Roman';
+  }
+  
+  .layout {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    grid-template-rows: 90px 1fr;
+    height: 95vh;
+  }
+  
+  /* X-axis: header */ 
+  .header-x {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    background: #294f81;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    color: #ffffff;
+    font-size: 1.5em;
+    /* Add a bottom border to look like an axis */
+  }
+  
+  /* Y-axis: vertical sidebar */
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 100px;
+}
+
+.sidebar-link {
+    display: block;
+    color: #fff;
+    background: #294f81;
+    padding: 35px 15px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: 'Times New Roman', serif;
+    border-radius: 9px;
+    box-shadow:  6px 9px rgba(0, 0, 0, 0.541);
+    transition: background 0.2s, color 0.2s;
+    font-weight: 600;
+    text-align: left;
+}
+
+.sidebar-link:hover {
+    background: #CA000A;
+    color: #fff;
+}
+
+
+  .header-logo-left {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    margin-right: 18px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .header-title {
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #fff;
+    position: relative;
+    left: 150px;
+    flex: 4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1.0em;
+    word-spacing: 1em;
+}
+
+  /*Table Contents*/
+  .table-center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+  }
+  
+  .box-table {
+    border-collapse: separate;
+    border-spacing: 15px;
+    width: 675px; /*Adjust the sides of the table*/
+    height: 75%;  /*Adjust the height of the table*/
+    background: #fff;
+    border: 3px solid #333;
+    border-radius: 3px;
+    box-shadow: 0 9px 15px rgb(0, 0, 0);
+    overflow: hidden;
+  }
+  
+  .box-table th, .box-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 3px solid #eee;
+  }
+  
+  .box-table th {
+    background: #CA000A;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .box-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Optional: Make corners of header and last row rounded for box effect */
+  .box-table th:first-child {
+    border-top-left-radius: 1px;
+  }
+  .box-table th:last-child {
+    border-top-right-radius: 1px;
+  }
+  .box-table tr:last-child td:first-child {
+    border-bottom-left-radius: 14px;
+  }
+  .box-table tr:last-child td:last-child {
+    border-bottom-right-radius: 14px;
+  }
+
+  /* Search Bar Styling */
+  .Search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    height: 60px;
+    width: 60%;
+    margin: 20px auto 30px auto;
+    position: relative;
+    top: -250px;
+    right: 100px;
+  }
+  
+  .search-bar {
+    width: 45%;
+    box-sizing: border-box;
+    padding: 9px 40px 9px 15px; /* left padding for text, right for icon */
+    font-size: 1.1rem;
+    border: 3px solid #333;
+    border-radius: 9px;
+    outline: none;
+    background: #f7f7f7;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  right: 320px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #111111;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+  .user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #0c0c0c;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1.0em;
+    margin-right: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    border: 2px solid #eee;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+.user-icon i {
+    margin: auto;
+}
+.user-icon:hover {
+    box-shadow: 0 4px 16px rgba(202,0,10,0.15);
+    background: #f5f6fa;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+
+
+
