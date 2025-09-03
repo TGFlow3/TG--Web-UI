@@ -48,7 +48,7 @@
       <aside class="sidebar">
         <ul class="sidebar-nav">
           <li>
-            <a href="#" class="sidebar-item active">Recent Documents</a>
+            <a href="#" class="sidebar-item">Recent Documents</a>
           </li>
           <li>
             <a href="#" class="sidebar-item">Tagged Documents</a>
@@ -69,13 +69,14 @@
           <h1>Welcome to ACE Document Depot</h1>
           <div class="search-container">
             <input
-              type="
-                text"
-              placeholder="Search"
+              type="text"
+              id="search-bar"
+              placeholder="Search GitHub files..."
               class="search-input"
             />
             <i class="fas fa-search search-icon"></i>
           </div>
+          <ul id="github-file-list" style="margin-top:1rem;"></ul>
         </div>
         <!-- End of Search bar -->
 
@@ -83,56 +84,13 @@
         <!-- Recent Documents view -->
         <div id="recent-documents-view">
           <div class="document-view-section">
-            <div class="document-view-header">
+            <div class="document-view-header" style="display:none;">
               <h2>Document View</h2>
             </div>
-            <div class="document-list-container">
-              <div class="document-list">
+            <div class="document-list-container" style="display:none;">
+              <div class="document-list" style="display:none;">
                 <!-- single document item -->
-                <div class="document-item">
-                  <div class="document-file-icon">
-                    <i class="far fa-file-alt"></i>
-                  </div>
-                  <div class="document-details">
-                    <span class="document-title">Onboarding.docx</span>
-                    <span class="document-owner">TNT-DSAM</span>
-                  </div>
-                  <span class="document-timestamp"
-                    >Viewed at 12:30pm 2025-09-30</span
-                  >
-                </div>
-                <!-- end of single document item -->
-
-                <!-- single document item -->
-                <div class="document-item">
-                  <div class="document-file-icon">
-                    <i class="far fa-file-alt"></i>
-                  </div>
-                  <div class="document-details">
-                    <span class="document-title">Project Proposal.pdf</span>
-                    <span class="document-owner">TNT-CIA</span>
-                  </div>
-                  <span class="document-timestamp"
-                    >Viewed at 13:05pm 2025-08-07</span
-                  >
-                </div>
-                <!-- end of single document item -->
-                <!-- single document item -->
-                <div class="document-item">
-                  <div class="document-file-icon">
-                    <i class="far fa-file-alt"></i>
-                  </div>
-                  <div class="document-details">
-                    <span class="document-title"
-                      >Control M: How to force order a job.docx</span
-                    >
-                    <span class="document-owner">DCS-Prod Control</span>
-                  </div>
-                  <span class="document-timestamp"
-                    >Viewed at 11:05am 2025-07-07</span
-                  >
-                </div>
-                <!-- end of single document item -->
+                <!-- Document items removed, view is now blank -->
               </div>
             </div>
           </div>
@@ -148,53 +106,7 @@
             <div class="document-list-container">
               <div class="document-list">
                 <!-- single document item -->
-                <div class="document-item">
-                  <div class="document-file-icon">
-                    <i class="far fa-file-alt"></i>
-                  </div>
-                  <div class="document-details">
-                    <span class="document-title">Onboarding.docx</span>
-                    <span class="document-owner">TNT-DSAM</span>
-                  </div>
-                  <span class="document-timestamp"
-                    >Viewed at 12:30pm 2025-09-30</span
-                  >
-                  <i class="fas fa-star document-tag-star"></i>
-                </div>
-                <!-- end of single document item -->
-
-                <!-- single document item -->
-                <div class="document-item">
-                  <div class="document-file-icon">
-                    <i class="far fa-file-alt"></i>
-                  </div>
-                  <div class="document-details">
-                    <span class="document-title">Project Proposal.pdf</span>
-                    <span class="document-owner">TNT-GIA</span>
-                  </div>
-                  <span class="document-timestamp"
-                    >Viewed at 13:05pm 2025-08-07</span
-                  >
-                  <i class="fas fa-star document-tag-star"></i>
-                </div>
-                <!-- end of single document item -->
-                <!-- single document item -->
-                <div class="document-item">
-                  <div class="document-file-icon">
-                    <i class="far fa-file-alt"></i>
-                  </div>
-                  <div class="document-details">
-                    <span class="document-title"
-                      >Control M: How to force order a job.docx</span
-                    >
-                    <span class="document-owner">DCS-Prod Control</span>
-                  </div>
-                  <span class="document-timestamp"
-                    >Viewed at 11:05am 2025-07-07</span
-                  >
-                  <i class="fas fa-star document-tag-star"></i>
-                </div>
-                <!-- end of single document item -->
+                <!-- Document items removed, view is now blank -->
               </div>
             </div>
           </div>
@@ -210,50 +122,7 @@
             <div class="document-list-container">
               <div class="document-list">
                 <!-- single document item -->
-                <div class="document-item">
-                  <div class="document-file-icon">
-                    <i class="far fa-file-alt"></i>
-                  </div>
-                  <div class="document-details">
-                    <span class="document-title">Onboarding.docx</span>
-                    <span class="document-owner">TNT-DSAM</span>
-                  </div>
-                  <span class="document-timestamp"
-                    >Modified at 12:30pm 2025-09-30</span
-                  >
-                </div>
-                <!-- end of single document item -->
-
-                <!-- single document item -->
-                <div class="document-item">
-                  <div class="document-file-icon">
-                    <i class="far fa-file-alt"></i>
-                  </div>
-                  <div class="document-details">
-                    <span class="document-title">Project Proposal.pdf</span>
-                    <span class="document-owner">TNT-GIA</span>
-                  </div>
-                  <span class="document-timestamp"
-                    >Modified at 13:05pm 2025-08-07</span
-                  >
-                </div>
-                <!-- end of single document item -->
-                <!-- single document item -->
-                <div class="document-item">
-                  <div class="document-file-icon">
-                    <i class="far fa-file-alt"></i>
-                  </div>
-                  <div class="document-details">
-                    <span class="document-title"
-                      >Control M: How to force order a job.docx</span
-                    >
-                    <span class="document-owner">DCS-Prod Control</span>
-                  </div>
-                  <span class="document-timestamp"
-                    >Modified at 11:05am 2025-07-07</span
-                  >
-                </div>
-                <!-- end of single document item -->
+                <!-- Document items removed, view is now blank -->
               </div>
             </div>
           </div>
