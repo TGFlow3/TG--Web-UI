@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => 
   // Dropdown menu logic for Home.html user icon
   const userIcon = document.getElementById('userIcon');
   const userDropdown = document.getElementById('userDropdown');
