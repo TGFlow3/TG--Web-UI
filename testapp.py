@@ -8,12 +8,13 @@ import pdfplumber
 from PIL import Image
 import pytesseract
 import faiss
-
+from flask_cors import CORS
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
+CORS(app)
 
-repo_path = "C:\\Temp\\Testing"
+repo_path = "C:\\Users\\traly\\OneDrive\\Documents\\WindowsPowerShell\\Notes\\LLM's"
 file_types = [".py", ".md", ".txt", ".html", ".pdf", ".docx", ".png", ".jpg", ".jpeg"]
 
 def get_files(repo_path, file_types):
@@ -105,8 +106,34 @@ def query_llm_with_context(query, model, index, chunked_docs, top_k=5):
     return answer
 
 # Example usage:
-answer = query_llm_with_context("What about getting to know elon musk?", model, index, chunked_docs, top_k=5)
-print("LLM Answer:", answer)
+#answer = query_llm_with_context("What about getting to know elon musk?", model, index, chunked_docs, top_k=5)
+#print("LLM Answer:", answer)
+
+# Flask API endpoint for RAG workflow
+@app.route('/rag_query', methods=['POST'])
+def rag_query():
+    data = request.get_json()
+    query = data.get('query')
+    if not chunked_docs or not isinstance(chunked_docs, list) or len(chunked_docs) == 0:
+        return jsonify({'error': 'No documents available for retrieval.'}), 400
+    if not query or not isinstance(query, str):
+        return jsonify({'error': 'Query is missing or invalid.'}), 400
+
+
+# Retrieve relevant chunks
+    query_embedding = model.encode([query]).astype('float32')
+    D, I = index.search(query_embedding, k=5)
+    results = [chunked_docs[i] for i in I[0]]
+
+    # Extract filenames from chunked_docs (assuming format: "filepath: line")
+    filenames = []
+    for chunk in results:
+        filename = chunk.split(': ', 1)[0]
+        filenames.append(filename)
+
+    #Get LLM answer
+    answer = query_llm_with_context(query, model, index, chunked_docs, top_k=5)
+    return jsonify({'response': answer, 'filenames': filenames})
 
 
 
